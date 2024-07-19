@@ -6,13 +6,12 @@ resource "aws_subnet" "devops_subnet_private_1a" {
   tags = merge(
     local.tags,
     {
-      Name                              = "devops-terraform-private-subnet-1a"
+      Name                              = "${var.project_name}-private-subnet-1a"
       "kubernetes.io/role/internal-elb" = 1
     }
 
   )
 }
-
 
 resource "aws_subnet" "devops_subnet_private_1b" {
   vpc_id            = aws_vpc.eks_vpc.id
