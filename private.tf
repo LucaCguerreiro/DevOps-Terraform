@@ -21,7 +21,7 @@ resource "aws_subnet" "devops_subnet_private_1b" {
   tags = merge(
     local.tags,
     {
-      Name                              = "devops-terraform-private-subnet-1b"
+      Name                              = "${var.project_name}-private-subnet-1b"
       "kubernetes.io/role/internal-elb" = 1
     }
 
